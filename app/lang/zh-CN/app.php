@@ -14,5 +14,8 @@ return array(
 		'profile' => '个人信息',
 		'logout' => '退出',
                 'greeting' => '你好 ，',
-	)
+	),
+        'calendar' => array(
+		'title' => '日程表',
+	),
 );

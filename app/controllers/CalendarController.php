@@ -2,6 +2,8 @@
 
 class CalendarController extends \BaseController {
 
+	public $layout = 'layouts.master';
+
 	/**
 	 * Display a listing of the resource.
 	 *

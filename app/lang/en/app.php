@@ -8,4 +8,10 @@ return array(
 		'button' => 'Sign In',
 		'error'  => 'Invalid username or password.',
 	),
+	'menu' => array(
+		'calendar' => 'Calendar',
+		'account' => 'Account',
+		'profile' => 'Your Profile',
+		'logout' => 'Sign Out',
+	)
 );

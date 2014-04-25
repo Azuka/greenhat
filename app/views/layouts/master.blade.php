@@ -36,13 +36,13 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li>
-					<a href="{{ route('calendar.index') }}" class="dropdown-toggle" data-toggle="dropdown">Calendar</a>
+					<a href="{{ route('calendar.index') }}" class="dropdown-toggle" data-toggle="dropdown">{{ Lang::get('app.menu.calendar') }}</a>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Lang::get('app.menu.account') }} <b class="caret"></b></a>
 					<ul class="dropdown-menu">
-					<li><a href="/profile">Your Profile</a></li>
-						<li><a href="/logout">Sign Out</a></li>
+					<li><a href="/profile">{{ Lang::get('app.menu.profile') }}</a></li>
+						<li><a href="/logout">{{ Lang::get('app.menu.logout') }}</a></li>
 					</ul>
 				</li>
 			</ul>

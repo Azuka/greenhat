@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('uses' => 'LoginController@index', 'as' => 'login'));
+Route::post('/login', array('before' => 'csrf', 'uses' => 'LoginController@process'));
+Route::get('/calendar', array('uses'=> 'CalendarController@index', 'as' => 'calendar.index'));
+Route::post('/calendar', array('uses'=> 'CalendarController@create', 'as' => 'calendar.create'));
+Route::get('/profile', array('uses'=> 'ProfileController@index', 'as' => 'profile.index'));
+Route::get('/profile/id', array('uses'=> 'ProfileController@edit', 'as' => 'profile.edit'));
+Route::put('/profile/id', array('uses'=> 'ProfileController@update', 'as' => 'profile.update'));

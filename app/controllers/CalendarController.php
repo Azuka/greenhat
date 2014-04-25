@@ -86,7 +86,15 @@ class CalendarController extends \BaseController {
 
     public function logout()
 	{
-		Auth::logout(); // log the user out of our application
+		try
+		{
+			Auth::logout(); // log the user out of our application
+		}
+		catch (Exception $ex)
+		{
+			// fail silently
+		}
+
 		return Redirect::route('login.index'); // redirect the user to the login screen
 	}
 }

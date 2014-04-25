@@ -83,11 +83,16 @@ return array(
     */
 
     'custom' => array(
-        'attribute-name' => array(
-            'username.required' => '',
-            'password.required' => '',
-            'password.alphaNum' => '',
-            'password.min' => '',
+        'username' => array(
+            'required' => '用户名不可为空',
+            'password.required' => '密码不可为空',
+            'password.alphaNum' => '密码必须是英文字符',
+            'password.min' => '密码最少8位',
+        ),
+        'password' => array(
+            'required' => '密码不可为空',
+            'alphaNum' => '密码必须是英文字符',
+            'min' => '密码最少8位',
         ),
     ),
 

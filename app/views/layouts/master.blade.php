@@ -42,7 +42,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Lang::get('app.menu.account') }} <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 					<li><a href="{{ route('profile.index') }}">{{ Lang::get('app.menu.profile') }}</a></li>
-						<li><a href="{{ route('logout.index') }}">{{ Lang::get('app.menu.logout') }}</a></li>
+						<li><a href="{{ route('action.logout') }}">{{ Lang::get('app.menu.logout') }}</a></li>
 					</ul>
 				</li>
 			</ul>

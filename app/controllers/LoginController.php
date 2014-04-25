@@ -46,9 +46,10 @@ class LoginController extends BaseController {
 			// attempt to do the login
 			if (Auth::attempt($userdata))
 			{
+				Session::put('lang', Auth::getUser()->locale);
 				// validation successful!
 				// redirect them to the secure section or whatever
-				return Redirect::intended(route('calendar.index'));
+				return Redirect::route('calendar.index');
 				
 			}
 			else

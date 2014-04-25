@@ -13,5 +13,6 @@ return array(
 		'account' => 'Account',
 		'profile' => 'Your Profile',
 		'logout' => 'Sign Out',
+                'greeting' => 'Hello ,',
 	)
 );

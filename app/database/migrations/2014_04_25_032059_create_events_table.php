@@ -16,6 +16,7 @@ class CreateEventsTable extends Migration {
             {
                     /* @var $table \Illuminate\Database\Schema\Blueprint */
                     $table->increments('id');
+                    $table->bigInteger('user_id')->unsigned();
                     $table->string('title');
                     $table->string('description');
                     $table->dateTime('from');

@@ -17,6 +17,7 @@ Route::group(array('before' => 'auth'), function () {
 	Route::get('/profile', array('uses'=> 'ProfileController@index', 'as' => 'profile.index'));
 	Route::get('/profile/edit', array('uses'=> 'ProfileController@edit', 'as' => 'profile.edit'));
 	Route::put('/profile', array('uses'=> 'ProfileController@update', 'as' => 'profile.update'));
+        Route::get('/logout', array('as' => 'action.logout', 'uses' => 'CalendarController@logout'));
 });
 
 Route::get('/', array('uses' => 'LoginController@index', 'as' => 'login.index'));

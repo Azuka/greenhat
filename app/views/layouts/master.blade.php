@@ -46,7 +46,7 @@
 					</ul>
 				</li>
 			</ul>
-			<p class="navbar-text navbar-right">Hello, {{ Auth::user()->first_name }} </p>
+			<p class="navbar-text navbar-right"> {{Lang::get('app.menu.greeting') }} {{ Auth::user()->first_name }} </p>
 		</div><!--/.nav-collapse -->
 	</div><!--/.container-fluid -->
 </div>

@@ -11,6 +11,7 @@
 
 	<!-- Custom styles for this template -->
 	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/calendar.min.css" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -68,11 +69,10 @@
 <script src="/assets/js/jquery.form.js"></script>
 <script src="/assets/js/rails.min.js"></script>
 <script src="/assets/js/moment.min.js"></script>
-<script src="/assets/js/handlebars.js"></script>
-<script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="/assets/js/json2.js"></script>
-<script src="/assets/js/jqueryui.js"></script>
-<script src="/assets/js/elockbox.js"></script>
+<script src="/assets/js/underscore-min.js"></script>
+<script src="/assets/js/calendar.min.js"></script>
+<script src="/assets/js/language/zh-CN.js"></script>
+<script src="/assets/js/greenhat.js"></script>
 
 @yield('footer', '')
 </body>

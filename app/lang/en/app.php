@@ -14,5 +14,8 @@ return array(
 		'profile' => 'Your Profile',
 		'logout' => 'Sign Out',
                 'greeting' => 'Hello ,',
-	)
+	),
+	'calendar' => array(
+		'title' => 'Calendar',
+	),
 );

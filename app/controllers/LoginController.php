@@ -17,6 +17,14 @@ class LoginController extends BaseController {
 			'password' => 'required|alphaNum|min:8' // password can only be alphanumeric and has to be greater than 3 characters
 		);
 
+		// Get language validation using English as default
+		/*$messages = [
+			'username.required' => Lang::get('app.login.usernameRequired', Lang::get('validation.required') ),
+			'password.required' => Lang::get('app.login.passwordRequired', Lang::get('validation.required') ),
+			'password.alphaNum' => Lang::get('app.login.passwordAlphaNum', Lang::get('validation.alphaNum') ),
+			'password.min' => Lang::get('app.login.passwordMin', Lang::get('validation.min') ),
+		];*/
+
 		// run the validation rules on the inputs from the form
 		$validator = Validator::make(Input::all(), $rules);
 

@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', array('uses' => 'LoginController@index', 'as' => 'login'));
-Route::post('/login', array('before' => 'csrf', 'uses' => 'LoginController@process'));
+Route::get('/', array('uses' => 'LoginController@index', 'as' => 'login.index'));
+Route::post('/login', array('before' => 'csrf', 'uses' => 'LoginController@process', 'as' => 'login.process'));
 Route::get('/calendar', array('uses'=> 'CalendarController@index', 'as' => 'calendar.index'));
 Route::post('/calendar', array('uses'=> 'CalendarController@create', 'as' => 'calendar.create'));
 Route::get('/profile', array('uses'=> 'ProfileController@index', 'as' => 'profile.index'));

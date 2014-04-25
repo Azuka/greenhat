@@ -19,6 +19,15 @@ class DatabaseSeeder extends Seeder {
 			'locale' => 'en',
 			'timezone' => 'America/Los_Angeles',
 		]);
+                
+                User::create([
+			'username' => 'miles',
+			'password' => Hash::make('changemenow'),
+			'first_name' => '唯一',
+			'last_name' => '吴',
+			'locale' => 'zh-CN',
+			'timezone' => 'Asia/Shanghai',
+		]);
 	}
 
 }

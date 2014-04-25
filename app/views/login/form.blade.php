@@ -24,6 +24,10 @@
 <div class="form-group">
 	<input type="submit" value="{{ Lang::get('app.login.button') }}">
 </div>
+<p class="text-center">
+	<a href="{{ route('login.lang', 'en') }}"><img src="/assets/img/en.png" alt="English"></a>
+	<a href="{{ route('login.lang', 'zh-CN') }}"><img src="/assets/img/zh-CN.png" alt="Chinese"></a>
+</p>
 
 {{ Form::token() }}
 {{ Form::close() }}

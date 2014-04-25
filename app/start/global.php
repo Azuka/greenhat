@@ -67,6 +67,8 @@ App::down(function()
 	return Response::make("Be right back!", 503);
 });
 
+App::setLocale(Session::get('lang', 'en'));
+
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File

@@ -61,4 +61,10 @@ class LoginController extends BaseController {
 
 	}
 
+	public function lang($lang)
+	{
+		Session::put('lang', $lang);
+		return Redirect::route('login.index');
+	}
+
 }

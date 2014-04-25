@@ -16,5 +16,6 @@ Route::post('/login', array('before' => 'csrf', 'uses' => 'LoginController@proce
 Route::get('/calendar', array('uses'=> 'CalendarController@index', 'as' => 'calendar.index'));
 Route::post('/calendar', array('uses'=> 'CalendarController@create', 'as' => 'calendar.create'));
 Route::get('/profile', array('uses'=> 'ProfileController@index', 'as' => 'profile.index'));
-Route::get('/profile/id', array('uses'=> 'ProfileController@edit', 'as' => 'profile.edit'));
-Route::put('/profile/id', array('uses'=> 'ProfileController@update', 'as' => 'profile.update'));
+Route::get('/profile/edit', array('uses'=> 'ProfileController@edit', 'as' => 'profile.edit'));
+Route::put('/profile', array('uses'=> 'ProfileController@update', 'as' => 'profile.update'));
+Route::get('/login/{lang}', array('uses'=> 'LoginController@lang', 'as' => 'login.lang'));

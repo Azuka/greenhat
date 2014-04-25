@@ -4,7 +4,8 @@ return array(
 	'login' => array(
 		'title' => 'Login',
 		'username' => 'Username',
-		'username' => 'Password',
+		'password' => 'Password',
 		'button' => 'Sign In',
+		'error'  => 'Invalid username or password.',
 	),
 );

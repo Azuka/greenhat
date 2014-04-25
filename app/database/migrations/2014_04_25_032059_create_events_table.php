@@ -16,13 +16,21 @@ class CreateEventsTable extends Migration {
             {
                     /* @var $table \Illuminate\Database\Schema\Blueprint */
                     $table->increments('id');
-                    $table->bigInteger('user_id')->unsigned();
+                    $table->integer('user_id')->unsigned();
                     $table->string('title');
                     $table->string('description');
                     $table->dateTime('from');
                     $table->dateTime('to');
                     $table->timestamps();
                     $table->softDeletes();
+                    
+            });
+            
+            Schema::table('events', function($table)
+            {
+                    $table->foreign('user_id')
+                            ->references('id')->on('users')
+                            ->onDelete('cascade');
             });
 	}
 

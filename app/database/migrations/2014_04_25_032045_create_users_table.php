@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration {
 			$table->string('locale', 50);
 			$table->string('timezone', 50);
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

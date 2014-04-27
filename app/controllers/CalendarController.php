@@ -23,7 +23,20 @@ class CalendarController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$this->layout = null;
+        $data         = array('error' => true, 'msg' => '');
+
+        $event = new EventModel;
+		$event->title = Input::get('eventTitle');
+		$event->startTime = Input::get('startTime');
+		$event->endTime = Input::get('endTime');
+		$event->description = Input::get('description');
+		$event->user_id = Auth::getUser()->id;
+		
+		$data['error'] = false;
+		$data['event'] = $event->toArray();
+
+		return json_encode($data);
 	}
 
 
@@ -44,9 +57,26 @@ class CalendarController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function get()
 	{
-		//
+		$this->layout = null;
+		
+		$events = [];
+		
+		foreach (Auth::getUser()->events as $event)
+		{
+			$event = $event->toArray();
+			
+			$event['start'] = strtotime($event['from']);
+			$event['end'] = strtotime($event['to']);
+			$event['url'] = 'hhh';
+			$event['class'] = 'hhh';
+			
+			$events[] = $event;
+		}
+		
+		return json_encode(array('success' => 1, 'result' => $events));
+		
 	}
 
 

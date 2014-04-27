@@ -70,6 +70,7 @@
 <script src="/assets/js/rails.min.js"></script>
 <script src="/assets/js/moment.min.js"></script>
 <script src="/assets/js/underscore-min.js"></script>
+<script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
 <script src="/assets/js/calendar.min.js"></script>
 <script src="/assets/js/language/zh-CN.js"></script>
 <script src="/assets/js/greenhat.js"></script>

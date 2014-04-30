@@ -5,6 +5,9 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+	public $timestamps = true;
+	public $softDeletes = true;
+
 	/**
 	 * The database table used by the model.
 	 *
@@ -46,7 +49,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public function getRememberToken()
 	{
-		return $this->remember_token;
+		return null;
 	}
 
 	/**
@@ -67,7 +70,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	public function getRememberTokenName()
 	{
-		return 'remember_token';
+		return null;
 	}
 
 	/**
@@ -78,6 +81,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
+	}
+
+	public function events()
+	{
+		return $this->hasMany('EventModel');
 	}
 
 }

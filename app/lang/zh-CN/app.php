@@ -5,6 +5,10 @@ return array(
 		'date' => 'Y-m-d @ G:i',
 		'dateJs' => 'yyyy-mm-dd @ h:mm',
 		'time' => '',
+		
+		'previous' => '&lt;&lt; 之前',
+		'today' => '今天',
+		'next' => '之后 &gt;&gt;',
 	),
 	'login' => array(
 		'title' => '登陆',

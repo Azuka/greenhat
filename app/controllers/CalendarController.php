@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 class CalendarController extends \BaseController {
 
 	public $layout = 'layouts.master';
@@ -28,10 +29,11 @@ class CalendarController extends \BaseController {
 
         $event = new EventModel;
 		$event->title = Input::get('eventTitle');
-		$event->startTime = Input::get('startTime');
-		$event->endTime = Input::get('endTime');
+		$event->from = Carbon::createFromFormat(Lang::get('app.format.date'), Input::get('startTime'));
+		$event->to = Carbon::createFromFormat(Lang::get('app.format.date'), Input::get('endTime'));
 		$event->description = Input::get('description');
 		$event->user_id = Auth::getUser()->id;
+		$event->save();
 		
 		$data['error'] = false;
 		$data['event'] = $event->toArray();
@@ -67,9 +69,9 @@ class CalendarController extends \BaseController {
 		{
 			$event = $event->toArray();
 			
-			$event['start'] = strtotime($event['from']);
-			$event['end'] = strtotime($event['to']);
-			$event['url'] = 'hhh';
+			$event['start'] = strtotime($event['from'])*1000;
+			$event['end'] = strtotime($event['to'])*1000;
+			$event['url'] = null;
 			$event['class'] = 'hhh';
 			
 			$events[] = $event;

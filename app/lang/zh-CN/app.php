@@ -2,8 +2,8 @@
 
 return array(
 	'format' => array(
-		'date' => 'Y-m-d',
-		'dateJs' => 'YYYY-m-d @ h:mm:ss a',
+		'date' => 'Y-m-d @ G:i',
+		'dateJs' => 'yyyy-mm-dd @ h:mm',
 		'time' => '',
 	),
 	'login' => array(

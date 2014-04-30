@@ -2,9 +2,12 @@
 
 return array(
 	'format' => array(
-		'date' => 'm/d/Y',
-		'dateJs' => 'M/D/YYYY @ h:mm:ss a',
+		'date' => 'n/j/Y @ g:i a',
+		'dateJs' => 'm/d/yyyy @ H:mm p',
 		'time' => '',
+		'previous' => '&lt;&lt; Prev',
+		'today' => 'Today',
+		'next' => 'Next &gt;&gt;',
 	),
 	'login' => array(
 		'title' => 'Login',

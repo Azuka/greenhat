@@ -4,6 +4,17 @@
 
 @section('content')
 
+<div class="page-header">
+	<div class="pull-right">
+		<div class="btn-group">
+			<button class="btn btn-primary" data-calendar-nav="prev">{{ Lang::get('app.format.previous') }}</button>
+			<button class="btn btn-default" data-calendar-nav="today">{{ Lang::get('app.format.today') }}</button>
+			<button class="btn btn-primary" data-calendar-nav="next">{{ Lang::get('app.format.next') }}</button>
+		</div>
+	</div>
+	<h3></h3>
+</div>
+
 <div id="calendar"></div>
 
 <div id="modal-dialog-calendar" class="modal">
@@ -81,7 +92,17 @@
 			day:   {
 				enable: 0
 			}
-		}
+		},
+		onAfterViewLoad: function(view) {
+			$('.page-header h3').text(this.getTitle());
+		},
+	});
+
+	$('.btn-group button[data-calendar-nav]').each(function() {
+		var $this = $(this);
+		$this.click(function() {
+			calendar.navigate($this.data('calendar-nav'));
+		});
 	});
 	
 	$('#modal-dialog-calendar').on('shown.bs.modal', function(){
@@ -92,7 +113,9 @@
 		$('#modal-dialog-calendar').modal('show');
 	});
 	
-	$('.input-group').datetimepicker();
+	$('.input-group').datetimepicker({
+		language: '{{ Session::get('lang', 'en') }}'
+	});
 	
 	
     $('.modal form').each(function(i,e) {
@@ -111,7 +134,10 @@
 				{
 					a.addClass('alert-success').html(d.msg);
 					f[0].reset();
-					$('modal').modal('hide');
+					$('.modal').modal('hide');
+
+					calendar._loadEvents();
+					calendar._render();
 				}
 
 				a.prependTo(f);

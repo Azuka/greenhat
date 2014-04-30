@@ -109,7 +109,7 @@
 		$('#eventTitle').focus();
 	});
 	
-	$('.cal-month-day').on('dblclick', function(){
+	$('#calendar').on('dblclick', '.cal-month-day', function(){
 		$('#modal-dialog-calendar').modal('show');
 	});
 	

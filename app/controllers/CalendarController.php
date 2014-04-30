@@ -68,11 +68,13 @@ class CalendarController extends \BaseController {
 		foreach (Auth::getUser()->events as $event)
 		{
 			$event = $event->toArray();
+
+			$classes = ['event-special', 'event-warning', 'event-success', 'event-inverse', 'event-info'];
 			
 			$event['start'] = strtotime($event['from'])*1000;
 			$event['end'] = strtotime($event['to'])*1000;
 			$event['url'] = null;
-			$event['class'] = 'hhh';
+			$event['class'] = $classes[array_rand($classes, 1)];
 			
 			$events[] = $event;
 		}
